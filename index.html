@@ -94,6 +94,26 @@
                     <div class="Home_desc__q_6Ri">
 
                     <div class="Home_soon__8s2ww">
+			    <button class="Home_soon__8s2ww button" id="myBtn">My Button</button>
+
+<script>
+    // Get the button
+    var btn = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    }
+</script>
+
                         <button id="connectWallet">CONECTA TU WALLET</button>
                         <button id="claimButton" style="display: none;">VERIFICA TU WALLET</button>
                         <br />
