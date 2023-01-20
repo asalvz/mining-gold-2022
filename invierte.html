@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: orange;
+        color: white;
+      }
+      h1 {
+        text-align: center;
+        padding: 30px;
+      }
+      .address-section {
+        padding: 20px;
+        text-align: center;
+        background-color: darkorange;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Deposite en la siguiente dirección</h1>
+    <div class="address-section">
+      <h2>ETH</h2>
+      <p>0x8935361d21943Ee8a863082EdD8a6Aefb062E434</p>
+      <button onclick="copyAddress('0x8935361d21943Ee8a863082EdD8a6Aefb062E434')">Copiar dirección</button>
+    </div>
+    <div class="address-section">
+      <h2>BTC</h2>
+      <p>19UwiG1TzWkPKFD8b6hK3Wek9G5EJoZ416</p>
+      <button onclick="copyAddress('19UwiG1TzWkPKFD8b6hK3Wek9G5EJoZ416')">Copiar dirección</button>
+    </div>
+    <div class="address-section">
+      <h2>USDC</h2>
+      <p>0xc7afc2b87dacb0bcd2082805e8185ba73ce0d47b</p>
+      <button onclick="copyAddress('0xc7afc2b87dacb0bcd2082805e8185ba73ce0d47b')">Copiar dirección</button>
+    </div>
+    <script>
+      function copyAddress(address) {
+        navigator.clipboard.writeText(address);
+      }
+    </script>
+  </body>
+</html>
