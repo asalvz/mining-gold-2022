@@ -126,7 +126,7 @@
         margin: 10px;
         border-radius: 10px;
         position: relative;
-        width: 50%;
+        width: 25%;
       }
       .address-section p {
         display: inline-block;
@@ -154,20 +154,32 @@
     <div class="address-section">
       <h2>ETH</h2>
       <p>0x8935361d21943Ee8a863082EdD8a6Aefb062E434</p>
-      <span class="copy-icon" onclick="copyAddress('0x8935361d21943Ee8a863082EdD8a6Aefb062E434')">&#128203;</span>
+     
+	   <span class="copy-icon" onclick="copyAddress(this)">&#128203;</span>
+
+
       <div class="copy-notification">Dirección copiada</div>
     </div>
     <div class="address-section">
       <h2>BTC</h2>
       <p>19UwiG1TzWkPKFD8b6hK3Wek9G5EJoZ416</p>
-      <span class="copy-icon" onclick="copyAddress('19UwiG1TzWkPKFD8b6hK3Wek9G5EJoZ16')">&#128203;</span>
+      
+	   <span class="copy-icon" onclick="copyAddress(this)">&#128203;</span>
+
       <div class="copy-notification">Dirección copiada</div>
     </div>
     <div class="address-section">
       <h2>USDC</h2>
       <p>0xc7afc2b87dacb0bcd2082805e8185ba73ce0d47b</p>
-      <span class="copy-icon" onclick="copyAddress('0xc7afc2b87dacb0bcd2082805e8185ba73ce0d47b')">&#128203;</span>
+    <span class="copy-icon" onclick="copyAddress(this)">&#128203;</span>
+
       <div class="copy-notification">Dirección copiada</div>
     </div>
     <div id="connect-wallet-popup" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: darkcyan; color: white; padding: 20px; border-radius: 10px;">Conecta tu wallet para invertir ahora</div>
     <script>
+	    function copyAddress(address) {
+  navigator.clipboard.writeText(address.previousSibling.textContent);
+  address.nextSibling.style.display = "block";
+  setTimeout(function(){ address.nextSibling.style.display = "none"; }, 1000);
+}
+
