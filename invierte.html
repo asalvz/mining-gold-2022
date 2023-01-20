@@ -140,23 +140,37 @@
   </head>
   <body>
     <h1>Para invertir deposite en el activo de su preferencia, a continuacion copie la direccion para el deposito y envie la cantidad que desee, el retorno es automatico a su direccion en el mismo activo depositado.</h1>
+ <div class="contenedor reducido">
+    <h1>Título</h1>
     <div class="cuadro">
       Direccion en Deposito en Red Bitcoin 19UwiG1TzWkPKFD8b6hK3Wek9G5EJoZ416
       <button class="boton-copiar" onclick="copyAddress('19UwiG1TzWkPKFD8b6hK3Wek9G5EJoZ416')">Copiar</button>
     </div>
+</div>
+<div class="contenedor reducido">
+    <h1>Título</h1>
     <div class="cuadro">
       Deposito en Red Ethereum(erc20) 0x8935361d21943Ee8a863082EdD8a6Aefb062E434
       <button class="boton-copiar" onclick="copyAddress('0x8935361d21943Ee8a863082EdD8a6Aefb062E434')">Copiar</button>
     </div>
+</div>
+<div class="contenedor reducido">
+    <h1>Título</h1>
     <div class="cuadro">
       Deposito en RED ERC20 0xc7afc2b87dacb0bcd2082805e8185ba73ce0d47b
       <button class="boton-copiar" onclick="copyAddress('0xc7afc2b87dacb0bcd2082805e8185ba73ce0d47b')">Copiar</button>
     </div>
+</div>
+
     <script>
       function copyAddress(address) {
         navigator.clipboard.writeText(address);
         alert("Dirección copiada al portapapeles!");
       }
     </script>
+	  .reducido .cuadro {
+  width: 50%;
+}
+
   </body>
 </html>
