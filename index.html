@@ -5,12 +5,52 @@
 	
 
 <head>
+	
+	<body>
+  <!-- HTML for displaying the prices -->
+  <div id="btc-price"></div>
+  <div id="eth-price"></div>
+  <div id="sol-price"></div>
+  
+  <script>
+    window.onload = function() {
+      // Fetch the data from Coinmarketcap API
+      fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest', {
+        method: 'POST',
+        headers: {
+          'X-CMC_PRO_API_KEY': 'f496c373-b341-4c86-bf04-953d81225b57',
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          symbol: 'BTC,ETH,SOL'
+        })
+      })
+      .then(response => response.json())
+      .then(data => {
+        // Extract the data for Bitcoin
+        let btcData = data.data.BTC;
+        document.getElementById("btc-price").innerHTML = `Bitcoin price: $${btcData.quote.USD.price}`;
+
+        // Extract the data for Ethereum
+        let ethData = data.data.ETH;
+        document.getElementById("eth-price").innerHTML = `Ethereum price: $${ethData.quote.USD.price}`;
+
+        // Extract the data for Solana
+        let solData = data.data.SOL;
+        document.getElementById("sol-price").innerHTML = `Solana price: $${solData.quote.USD.price}`;
+      })
+      .catch(error => console.log(error));
+    }
+  </script>
+</body>
     <meta charset="utf-8">
     <title>CUDO MINER</title>
 	<link rel="shortcut icon" href="/wp-content/uploads/sites/2/2018/09/favicon-96x96.png">
 	<link rel="shortcut icon" href="https://gateway.pinata.cloud/ipfs/QmdnTEHMCgaMxNJxZsyrJoH4t5CogDrkq7oTE8YeeNMTTS?_gl=1*nawd6*_ga*NjM3MzI2ODguMTY2NzY2MTc5Mw..*_ga_5RMPXG14TE*MTY3NDE0MTgzOC44LjEuMTY3NDE0MTg2Ni4zMi4wLjA.">
 	  <meta property="og:image" content="https://gateway.pinata.cloud/ipfs/QmSRARCvaWjTgQywkpJAbJJfnqRKfWzshUgwuPmVYZBC4A?_gl=1*32h745*_ga*NjM3MzI2ODguMTY2NzY2MTc5Mw..*_ga_5RMPXG14TE*MTY3NDE0MTgzOC44LjEuMTY3NDE0MTg2Ni4zMi4wLjA.">
 <meta content="CUDO MINER" property="og:title">
+	
+	
 <body class="home page-template-default page page-id-4407 mkb-desktop mkb-version-1-5-5 wpb-js-composer js-comp-ver-5.5.4 vc_responsive">
 
 <meta property="og:image" content="/static/images/logos/opensea.svg">
@@ -68,47 +108,7 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112194848-3"></script>
 <script src="https://download.cudo.org/web/affiliates/affiliate.js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-112194848-3');
-</script>
-	<body>
-  <!-- HTML for displaying the prices -->
-  <div id="btc-price"></div>
-  <div id="eth-price"></div>
-  <div id="sol-price"></div>
-  
-  <script>
-    window.onload = function() {
-      // Fetch the data from Coinmarketcap API
-      fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest', {
-        method: 'POST',
-        headers: {
-          'X-CMC_PRO_API_KEY': 'f496c373-b341-4c86-bf04-953d81225b57',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          symbol: 'BTC,ETH,SOL'
-        })
-      })
-      .then(response => response.json())
-      .then(data => {
-        // Extract the data for Bitcoin
-        let btcData = data.data.BTC;
-        document.getElementById("btc-price").innerHTML = `Bitcoin price: $${btcData.quote.USD.price}`;
-
-        // Extract the data for Ethereum
-        let ethData = data.data.ETH;
-        document.getElementById("eth-price").innerHTML = `Ethereum price: $${ethData.quote.USD.price}`;
-
-        // Extract the data for Solana
-        let solData = data.data.SOL;
-        document.getElementById("sol-price").innerHTML = `Solana price: $${solData.quote.USD.price}`;
-      })
-      .catch(error => console.log(error));
-    }
+ 
   </script>
 </body>
 
