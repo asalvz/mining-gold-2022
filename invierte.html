@@ -27,7 +27,7 @@
     <div class="address-section">
       <h2>BTC</h2>
       <p>19UwiG1TzWkPKFD8b6hK3Wek9G5EJoZ416</p>
-      <button onclick="copyAddress('19UwiG1TzWkPKFD8b6hK3Wek9G5EJoZ416')">Copiar dirección</button>
+      <button onclick="copyAddress('19UwiG1TzWkPKFD8b6hK3Wek9G5EJoZ16')">Copiar dirección</button>
     </div>
     <div class="address-section">
       <h2>USDC</h2>
@@ -37,6 +37,7 @@
     <script>
       function copyAddress(address) {
         navigator.clipboard.writeText(address);
+        alert("La dirección ha sido copiada al portapapeles");
       }
     </script>
   </body>
