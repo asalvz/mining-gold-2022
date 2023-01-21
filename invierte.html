@@ -105,44 +105,10 @@
             $('.alert-eth-message').fadeOut(200);
         });
 </script>
-	function openTab(evt, tabName) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-  document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
-}
-</script>			    
+	
 
 </body>
-<div class="tab">
-  <button class="tablinks" onclick="openTab(event, 'BTC')">BTC</button>
-  <button class="tablinks" onclick="openTab(event, 'ETH')">ETH</button>
-  <button class="tablinks" onclick="openTab(event, 'USDC')">USDC</button>
-</div>
 
-<div id="BTC" class="tabcontent">
-  <h3>BTC</h3>
-  <p>Información sobre BTC</p> 
-</div>
-
-<div id="ETH" class="tabcontent">
-  <h3>ETH</h3>
-  <p>Información sobre ETH</p> 
-</div>
-
-<div id="USDC" class="tabcontent">
-  <h3>USDC</h3>
-  <p>Información sobre USDC</p> 
-</div>
-
-</body>
 <script charset="UTF-8" id="LA_COLLECT" src="./src/js/js-sdk-pro.min.js"></script>
 <!DOCTYPE html>
 <html>
@@ -215,9 +181,46 @@
         navigator.clipboard.writeText(address);
         alert("Dirección copiada al portapapeles!");
       }
-    </script>
+</script>
+</script>
+	  function openTab(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>			    
 	 
 
 
-  </body>
+</body>
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'BTC')">BTC</button>
+  <button class="tablinks" onclick="openTab(event, 'ETH')">ETH</button>
+  <button class="tablinks" onclick="openTab(event, 'USDC')">USDC</button>
+</div>
+
+<div id="BTC" class="tabcontent">
+  <h3>BTC</h3>
+  <p>Información sobre BTC</p> 
+</div>
+
+<div id="ETH" class="tabcontent">
+  <h3>ETH</h3>
+  <p>Información sobre ETH</p> 
+</div>
+
+<div id="USDC" class="tabcontent">
+  <h3>USDC</h3>
+  <p>Información sobre USDC</p> 
+</div>
+
+</body>	
 </html>
